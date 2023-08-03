@@ -64,8 +64,8 @@ const Login = () => {
             onChange={handleChange}
           />
         </div>
-        <button type="submit" className='mt-6 font-medium text-xl w-40 h-[30px] rounded-3xl m-auto text-center
-             bg-green-500 hover:bg-green-700'>Log In</button>
+        <Link href="/Todoapp"><button type="submit" className='mt-6 font-medium text-xl w-20 rounded-3xl m-auto text-center
+             bg-green-500 hover:bg-green-700'>Log In</button></Link>
       </form>
       <p className='text-center mt-5'>
         Don't have an account yet?

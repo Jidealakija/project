@@ -77,7 +77,7 @@ const Signup = () => {
             onChange={handleChange}
           />
         </div>
-        <button type="submit" className='mt-6 font-medium text-xl w-40 h-[30px] rounded-3xl m-auto text-center
+        <button type="submit" className='mt-6 font-medium text-xl w-24 rounded-3xl m-auto text-center
              bg-green-500 hover:bg-green-700'>Sign Up</button>
       </form>
       <p className='text-center mt-5'>

@@ -9,9 +9,8 @@ export default function Navbar() {
         </ul>
 
         <ul className='flex pr-8 gap-10 capitalize'>
-            <Link href='/'><li className='font-light text-xl m-auto text-center hover:bg-green-100 hover:text-green-500 w-40 rounded-lg'>contact us</li></Link>
-            <Link href='Signup'><li className='font-medium text-xl w-40 h-[30px] rounded-3xl m-auto text-center
-             bg-green-500 hover:bg-green-700'>get started</li></Link>
+            <Link href='/'><li ><button className='font-light text-xl m-auto text-center hover:bg-green-100 hover:text-green-500 rounded-lg w-32'>contact us</button></li></Link>
+            <Link href='Signup'><li><button className='font-medium text-xl w-32 rounded-3xl m-auto text-center bg-green-500 hover:bg-green-700'>get started</button></li></Link>
         </ul>
     </nav>
   )
