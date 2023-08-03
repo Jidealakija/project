@@ -41,9 +41,9 @@ const Login = () => {
       <div className='w-[40rem] h-80 align-middle m-auto bg-neutral-600 rounded-xl'>
       <form onSubmit={handleSubmit} className='pt-10 text-center'>
         <div>
-          <label htmlFor="email" className='font-bold text-xl text-white'>Email:</label>
+          <p><label htmlFor="email" className='font-bold text-xl text-white'>Email</label></p>
           <input
-            className='rounded-lg'
+            className='rounded-lg text-center'
             type="email"
             id="email"
             name="email"
@@ -53,9 +53,9 @@ const Login = () => {
           />
         </div>
         <div className='mt-4'>
-          <label htmlFor="password" className='font-bold text-xl text-white'>Password:</label>
+          <p><label htmlFor="password" className='font-bold text-xl text-white'>Password</label></p>
           <input
-            className='rounded-lg'
+            className='rounded-lg text-center'
             type="password"
             id="password"
             name="password"
@@ -67,7 +67,7 @@ const Login = () => {
         <button type="submit" className='mt-6 font-medium text-xl w-40 h-[30px] rounded-3xl m-auto text-center
              bg-green-500 hover:bg-green-700'>Log In</button>
       </form>
-      <p className='text-center mt-10'>
+      <p className='text-center mt-5'>
         Don't have an account yet?
         <Link href="/Signup" className='pl-1 m-auto text-center
              hover:text-green-700'>

@@ -40,11 +40,11 @@ const Signup = () => {
   return (
     <section className='bg-[url(/office2.jpg)] h-screen bg-cover'>
       <div className='w-[40rem] h-80 align-middle m-auto bg-neutral-600 rounded-xl'>
-      <form onSubmit={handleSubmit} className='pt-20 text-center'>
+      <form onSubmit={handleSubmit} className='pt-7 text-center'>
         <div>
-          <label htmlFor="username" className='font-bold text-xl text-white'>Username:</label>
+          <p><label htmlFor="username" className='font-bold text-xl text-white'>Username</label></p>
           <input
-          className='rounded-lg'
+          className='rounded-lg text-center'
             type="text"
             id="username"
             name="username"
@@ -54,9 +54,9 @@ const Signup = () => {
           />
         </div>
         <div className='mt-4'>
-          <label htmlFor="email" className='font-bold text-xl text-white'>Email:</label>
+          <p><label htmlFor="email" className='font-bold text-xl text-white'>Email</label></p>
           <input
-          className='rounded-lg'
+          className='rounded-lg text-center'
             type="email"
             id="email"
             name="email"
@@ -66,9 +66,9 @@ const Signup = () => {
           />
         </div>
         <div className='mt-4'>
-          <label htmlFor="password" className='font-bold text-xl text-white'>Password:</label>
+          <p><label htmlFor="password" className='font-bold text-xl text-white'>Password</label></p>
           <input
-          className='rounded-lg'
+          className='rounded-lg text-center'
             type="password"
             id="password"
             name="password"
@@ -80,7 +80,7 @@ const Signup = () => {
         <button type="submit" className='mt-6 font-medium text-xl w-40 h-[30px] rounded-3xl m-auto text-center
              bg-green-500 hover:bg-green-700'>Sign Up</button>
       </form>
-      <p className='text-center mt-10'>
+      <p className='text-center mt-5'>
         Already have an account?
         <Link href="/Login" className='pl-1 m-auto text-center
              hover:text-green-700'>
