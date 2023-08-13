@@ -10,7 +10,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className='fixed inset-x-0 flex flex-col md:flex-row bg-slate-400 md:h-[6rem] justify-between items-center border-b-black border-b-2 '>
+    <nav className='fixed inset-x-0 flex flex-col md:flex-row bg-slate-400 md:h-[6rem] justify-between items-center border-b-black border-b-2 opacity-100'>
       <div className='flex justify-between items-center p-4 md:p-0'>
         <Link href='/'>
           <p className='text-5xl font-bold capitalize pl-5 md:text-5xl'>hustle</p>
