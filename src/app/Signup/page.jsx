@@ -17,10 +17,8 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Do any client-side validation here
-
     try {
-      // Send the form data to your server-side logic (e.g., Next.js API route)
+      
       const response = await fetch('/api/signup', {
         method: 'POST',
         headers: {
@@ -29,7 +27,7 @@ const Signup = () => {
         body: JSON.stringify(formData),
       });
 
-      // Handle the response here (e.g., show success message, redirect, etc.)
+      
       const data = await response.json();
       console.log(data);
     } catch (error) {
@@ -38,13 +36,13 @@ const Signup = () => {
   };
 
   return (
-    <section className='bg-[url(/office2.jpg)] h-screen bg-cover'>
-      <div className='w-[40rem] h-80 align-middle m-auto bg-neutral-600 rounded-xl'>
-      <form onSubmit={handleSubmit} className='pt-7 text-center'>
+    <section className='bg-[url(/office2.jpg)] h-screen bg-cover flex justify-center items-center'>
+      <div className='w-96 md:w-[40rem] h-auto p-6 bg-neutral-600 rounded-xl'>
+      <form onSubmit={handleSubmit} className='space-y-4 text-center'>
         <div>
-          <p><label htmlFor="username" className='font-bold text-xl text-white'>Username</label></p>
+          <label htmlFor="username" className='block font-bold text-xl text-white'>Username</label>
           <input
-          className='rounded-lg text-center'
+            className='w-full rounded-lg text-center md:w-96 h-10'
             type="text"
             id="username"
             name="username"
@@ -53,37 +51,36 @@ const Signup = () => {
             onChange={handleChange}
           />
         </div>
-        <div className='mt-4'>
-          <p><label htmlFor="email" className='font-bold text-xl text-white'>Email</label></p>
+        <div>
+          <label htmlFor="email" className='block font-bold text-xl text-white'>Email</label>
           <input
-          className='rounded-lg text-center'
+            className='w-full rounded-lg text-center md:w-96 h-10'
             type="email"
             id="email"
             name="email"
-            placeholder="Enter you email"
+            placeholder="Enter your email"
             value={formData.email}
             onChange={handleChange}
           />
         </div>
-        <div className='mt-4'>
-          <p><label htmlFor="password" className='font-bold text-xl text-white'>Password</label></p>
+        <div>
+          <label htmlFor="password" className='block font-bold text-xl text-white'>Password</label>
           <input
-          className='rounded-lg text-center'
+            className='w-full rounded-lg text-center md:w-96 h-10'
             type="password"
             id="password"
             name="password"
-            placeholder="Enter you password"
+            placeholder="Enter your password"
             value={formData.password}
             onChange={handleChange}
           />
         </div>
-        <button type="submit" className='mt-6 font-medium text-xl w-24 rounded-3xl m-auto text-center
-             bg-green-500 hover:bg-green-700'>Sign Up</button>
+        <Link href="/Todoapp"><button type="submit" className='w-fit mt-6 font-medium text-xl rounded-3xl py-2 px-4
+          bg-green-500 hover:bg-green-700 md:w-64'>Sign Up</button></Link>
       </form>
       <p className='text-center mt-5'>
         Already have an account?
-        <Link href="/Login" className='pl-1 m-auto text-center
-             hover:text-green-700'>
+        <Link href="/Login" className='block pl-1 m-auto hover:text-green-700'>
           Login
         </Link>
       </p>

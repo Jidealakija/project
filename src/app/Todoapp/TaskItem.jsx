@@ -29,49 +29,75 @@ export default function TaskItem({ task, onEditTask, onDeleteTask }) {
         }));
     };
 
-    if (isEditing) {
-        return (
-            <section>
-                <input
-                    type="text"
-                    name="taskName"
-                    value={editedTask.taskName}
-                    onChange={handleInputChange}
-                />
-                <input
-                    type="date"
-                    name="startDate"
-                    value={editedTask.startDate}
-                    onChange={handleInputChange}
-                />
-                <input
-                    type="date"
-                    name="endDate"
-                    value={editedTask.endDate}
-                    onChange={handleInputChange}
-                />
-                <select
-                    name="taskPriority"
-                    value={editedTask.taskPriority}
-                    onChange={handleInputChange}
-                >
-                    <option value="low">Low</option>
-                    <option value="high">High</option>
-                </select>
-                <button onClick={handleSaveClick}>Save</button>
-                <button onClick={handleCancelClick}>Cancel</button>
-            </section>
-        );
-    }
-
     return (
-        <section>
-            <h3>{task.taskName}</h3>
-            <p>Start date: {task.startDate}</p>
-            <p>End date: {task.endDate}</p>
-            <p>Priority: {task.taskPriority}</p>
-            <button onClick={handleEditClick}>Edit</button>
-            <button onClick={handleDeleteClick}>Delete</button>
+        <section className="border rounded p-4 mb-4">
+            {isEditing ? (
+                <>
+                    <input
+                        type="text"
+                        name="taskName"
+                        value={editedTask.taskName}
+                        onChange={handleInputChange}
+                        className="border rounded p-2 w-full mb-2"
+                    />
+                    <input
+                        type="date"
+                        name="startDate"
+                        value={editedTask.startDate}
+                        onChange={handleInputChange}
+                        className="border rounded p-2 mb-2"
+                    />
+                    <input
+                        type="date"
+                        name="endDate"
+                        value={editedTask.endDate}
+                        onChange={handleInputChange}
+                        className="border rounded p-2 mb-2"
+                    />
+                    <select
+                        name="taskPriority"
+                        value={editedTask.taskPriority}
+                        onChange={handleInputChange}
+                        className="border rounded p-2 w-full mb-2"
+                    >
+                        <option value="low">Low</option>
+                        <option value="high">High</option>
+                    </select>
+                    <button
+                        onClick={handleSaveClick}
+                        className="bg-blue-500 text-white px-4 py-2 rounded w-full mb-2 hover:bg-blue-600"
+                    >
+                        Save
+                    </button>
+                    <button
+                        onClick={handleCancelClick}
+                        className="bg-gray-400 text-white px-4 py-2 rounded w-full hover:bg-gray-500"
+                    >
+                        Cancel
+                    </button>
+                </>
+            ) : (
+                <>
+                    <h3 className="text-lg font-semibold mb-2">{task.taskName}</h3>
+                    <p>Start date: {task.startDate}</p>
+                    <p>End date: {task.endDate}</p>
+                    <p>Priority: {task.taskPriority}</p>
+                    <div className="flex justify-between mt-2">
+                        <button
+                            onClick={handleEditClick}
+                            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                        >
+                            Edit
+                        </button>
+                        <button
+                            onClick={handleDeleteClick}
+                            className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+                        >
+                            Delete
+                        </button>
+                    </div>
+                </>
+            )}
         </section>
     );
 }

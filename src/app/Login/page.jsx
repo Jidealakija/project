@@ -16,10 +16,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Do any client-side validation here
-
     try {
-      // Send the form data to your server-side logic (e.g., Next.js API route)
       const response = await fetch('/api/login', {
         method: 'POST',
         headers: {
@@ -28,7 +25,6 @@ const Login = () => {
         body: JSON.stringify(formData),
       });
 
-      // Handle the response here (e.g., show success message, redirect, etc.)
       const data = await response.json();
       console.log(data);
     } catch (error) {
@@ -37,13 +33,13 @@ const Login = () => {
   };
 
   return (
-    <section className='bg-[url(/office.jpg)] h-screen bg-cover'>
-      <div className='w-[40rem] h-80 align-middle m-auto bg-neutral-600 rounded-xl'>
-      <form onSubmit={handleSubmit} className='pt-10 text-center'>
+    <section className='bg-[url(/office.jpg)] h-screen bg-cover flex justify-center items-center'>
+      <div className='w-96 md:w-[40rem] h-auto p-6 bg-neutral-600 rounded-xl'>
+      <form onSubmit={handleSubmit} className='space-y-10 text-center'>
         <div>
-          <p><label htmlFor="email" className='font-bold text-xl text-white'>Email</label></p>
+          <label htmlFor="email" className='block font-bold text-xl text-white'>Email</label>
           <input
-            className='rounded-lg text-center'
+            className='w-full rounded-lg text-center md:w-96 h-10'
             type="email"
             id="email"
             name="email"
@@ -52,10 +48,10 @@ const Login = () => {
             onChange={handleChange}
           />
         </div>
-        <div className='mt-4'>
-          <p><label htmlFor="password" className='font-bold text-xl text-white'>Password</label></p>
+        <div>
+          <label htmlFor="password" className='block font-bold text-xl text-white'>Password</label>
           <input
-            className='rounded-lg text-center'
+            className='w-full rounded-lg text-center md:w-96 h-10'
             type="password"
             id="password"
             name="password"
@@ -64,13 +60,12 @@ const Login = () => {
             onChange={handleChange}
           />
         </div>
-        <Link href="/Todoapp"><button type="submit" className='mt-6 font-medium text-xl w-20 rounded-3xl m-auto text-center
-             bg-green-500 hover:bg-green-700'>Log In</button></Link>
+        <Link href="/Todoapp"><button type="submit" className='w-fit mt-6 font-medium text-xl rounded-3xl py-2 px-4
+          bg-green-500 hover:bg-green-700 md:w-64'>Log In</button></Link>
       </form>
       <p className='text-center mt-5'>
         Don't have an account yet?
-        <Link href="/Signup" className='pl-1 m-auto text-center
-             hover:text-green-700'>
+        <Link href="/Signup" className='block pl-1 m-auto hover:text-green-700'>
           Sign up
         </Link>
       </p>
