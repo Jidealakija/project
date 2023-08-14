@@ -1,6 +1,7 @@
 "use client"
 import { useState } from 'react';
 import Link from 'next/link';
+import axios from 'axios';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -17,16 +18,14 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('/api/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await axios.post('/api/login', formData);
 
-      const data = await response.json();
-      console.log(data);
+      if (response.status === 200) {
+        console.log('User logged in successfully!');
+        window.location.href = '/Todoapp';
+      } else {
+        console.log('Error logging in:', response.data);
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
     }

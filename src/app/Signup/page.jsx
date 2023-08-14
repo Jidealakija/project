@@ -1,6 +1,7 @@
 "use client"
 import { useState } from 'react';
 import Link from 'next/link';
+import axios from 'axios';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -18,18 +19,14 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      
-      const response = await fetch('/api/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await axios.post('/api/signup', formData);
 
-      
-      const data = await response.json();
-      console.log(data);
+      if (response.status === 200) {
+        console.log('User created successfully!');
+        window.location.href = '/Todoapp';
+      } else {
+        console.log('Error creating user:', response.data);
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
     }
