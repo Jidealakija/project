@@ -10,7 +10,7 @@ export default function TaskItem({ task, onEditTask, onDeleteTask }) {
 
     const handleSaveClick = () => {
         onEditTask(editedTask);
-        setIsEditing(false);
+        setIsEditing(true);
     };
 
     const handleCancelClick = () => {
