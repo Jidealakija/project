@@ -10,14 +10,14 @@ export default function Navbar() {
   };
 
   return (
-    <nav className='fixed inset-x-0 flex flex-col md:flex-row bg-slate-400 md:h-[6rem] justify-between items-center border-b-black border-b-2 opacity-100'>
-      <div className='flex justify-between items-center p-4 md:p-0'>
+    <nav className='fixed inset-x-0 flex flex-col md:flex-row md:py-6 bg-slate-400 md:h-[6rem] justify-between border-b-black border-b-2 opacity-100'>
+      <div className='flex justify-between p-4 md:p-0'>
         <Link href='/'>
           <p className='text-5xl font-bold capitalize pl-5 md:text-5xl'>hustle</p>
         </Link>
         <button
           onClick={toggleMenu}
-          className='md:hidden text-xl content-end'
+          className='md:hidden text-xl'
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
