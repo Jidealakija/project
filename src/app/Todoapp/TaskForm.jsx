@@ -16,6 +16,8 @@ export default function TaskForm({ onAddTask }) {
             endDate,
             taskPriority
         };
+        
+        localStorage.setItem("newTask", JSON.stringify(newTask));
         onAddTask(newTask);
         setTaskName("");
         setStartDate("");
